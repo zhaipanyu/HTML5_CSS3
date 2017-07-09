@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>html5 css3</title>
+    <style>
+    body{
+      background: rgba(123, 26, 23,0.7);
+    }
+    .loading,
+    .loading:before,
+    .loading:after {
+      background: #FFF;
+      animation: load1 1s infinite ease-in-out ;/*规定以慢速开始和结束的过渡效果*/
+      width: 10px;
+      height: 40px;
+    }
+    .loading:before,
+    .loading:after {
+      position: absolute;
+      top: 0;
+      content: '';
+    }
+    .loading:before {
+      left: -15px;
+    }
+    .loading {/*第一条不延迟,中间一条延迟0.16s*/
+      margin: 100px auto;
+      position: relative;
+      animation-delay: 0.16s;/*定义动画开始前等待的时间,负值-2s=动画快进2 秒*/
+    }
+    .loading:after {/*最后一条延迟0.32s*/
+      left: 15px;
+      animation-delay: 0.32s;
+    }
+
+    @keyframes load1 {
+      0%,
+      70%,
+      100% {
+        box-shadow: 0 0  #fff;
+        height: 40px;
+      }
+      20% {
+        box-shadow: 0 -20px #fff;
+        height: 50px;
+      }
+    }
+
+
+
+    </style>
+  </head>
+  <body>
+
+  <main>
+    <div class="loading"></div>
+  </main>
+  <footer>
+
+  </footer>
+  </body>
+</html>
